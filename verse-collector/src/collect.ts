@@ -52,6 +52,9 @@ export default async function collect(volume: string, book: string, chapter: num
     // remove superscripts on verses
     verseEls.find("sup").remove();
 
+    // remove ruby texts on verses
+    verseEls.find("rt").remove();
+
     const verses = verseEls
         .map(function(_, el) {
             return $(el).text().trim();
